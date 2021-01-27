@@ -159,6 +159,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-webpack-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/27/webpack-1/">webpack(一) 安装与使用</a>
+    </h1>
+  
+
+        
+        <a href="/2021/01/27/webpack-1/" class="archive-article-date">
+  	<time datetime="2021-01-27T02:56:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack webpack-cli --save-dev</span><br></pre></td></tr></table></figure>
+<h2 id="问题及解决方案"><a href="#问题及解决方案" class="headerlink" title="问题及解决方案"></a>问题及解决方案</h2><h4 id="一、-报错信息-Module-not-found-Error-Can-39-t-resolve-39-fs-39-in-39-D-tongruixun-GithubRepository-toy"><a href="#一、-报错信息-Module-not-found-Error-Can-39-t-resolve-39-fs-39-in-39-D-tongruixun-GithubRepository-toy" class="headerlink" title="一、 报错信息 Module not found: Error: Can&#39;t resolve &#39;fs&#39; in &#39;D:\tongruixun\GithubRepository\toy"></a>一、 报错信息 <code>Module not found: Error: Can&#39;t resolve &#39;fs&#39; in &#39;D:\tongruixun\GithubRepository\toy</code></h4><p>webpack5解决方案</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: <span class="string">&#x27;./index.js&#x27;</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: <span class="string">&#x27;main.js&#x27;</span>,</span><br><span class="line">        path: path.resolve(__dirname, <span class="string">&#x27;public&#x27;</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 增加这个配置  webpack5</span></span><br><span class="line">    resolve: &#123;</span><br><span class="line">        fallback: &#123;</span><br><span class="line">            fs: <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mode: <span class="string">&quot;development&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://webpack.docschina.org/guides/output-management/#setting-up-htmlwebpackplugin">https://webpack.docschina.org/guides/output-management/#setting-up-htmlwebpackplugin</a></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/27/webpack-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-node-fs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -166,7 +245,7 @@
       
         <p>— node(fs) 文件系统API<br>title: node-fs<br>date: 2021-01-27 10:07:55<br>tags: node</p>
 <hr>
-<h2 id="一、目录操作"><a href="#一、目录操作" class="headerlink" title="一、目录操作"></a>一、目录操作</h2><h4 id="一、读取目录"><a href="#一、读取目录" class="headerlink" title="一、读取目录"></a>一、读取目录</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入fs模块</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="comment">// 同步读取目录下的文件，返回文件数组列表</span></span><br><span class="line"><span class="keyword">const</span> files = fs.readdirSync(__dirname + <span class="string">&#x27;/source/_posts&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="一、目录操作"><a href="#一、目录操作" class="headerlink" title="一、目录操作"></a>一、目录操作</h2><h4 id="一、读取目录"><a href="#一、读取目录" class="headerlink" title="一、读取目录"></a>一、读取目录</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入fs模块</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="comment">// 同步读取目录下的文件，返回文件数组列表 元素是文件名和文件类型对的组合 文件名.文件类型</span></span><br><span class="line"><span class="comment">// __dirname  当前模块的目录名</span></span><br><span class="line"><span class="keyword">const</span> files = fs.readdirSync(__dirname + <span class="string">&#x27;/source/_posts&#x27;</span>);</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2021/01/27/node-fs/#more">more >></a>
         
@@ -231,7 +310,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、创建项目"><a href="#一、创建项目" class="headerlink" title="一、创建项目"></a>一、创建项目</h2><h2 id="二、解析markdown"><a href="#二、解析markdown" class="headerlink" title="二、解析markdown"></a>二、解析markdown</h2><h2 id="三、解析yml"><a href="#三、解析yml" class="headerlink" title="三、解析yml"></a>三、解析yml</h2>
+        <h2 id="一、创建项目"><a href="#一、创建项目" class="headerlink" title="一、创建项目"></a>一、创建项目</h2><h2 id="二、解析markdown"><a href="#二、解析markdown" class="headerlink" title="二、解析markdown"></a>二、解析markdown</h2><p>使用<code>marked</code>解析markdown</p>
+        
+          <a class="article-more-a" href="/2021/01/27/toy-1/#more">more >></a>
+        
       
 
       
@@ -856,82 +938,6 @@
 
 
   
-    <article id="post-system_analyst-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/17/system_analyst-2/">系统分析师(二)绪论</a>
-    </h1>
-  
-
-        
-        <a href="/2021/01/17/system_analyst-2/" class="archive-article-date">
-  	<time datetime="2021-01-17T06:34:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="信息与信息系统"><a href="#信息与信息系统" class="headerlink" title="信息与信息系统"></a>信息与信息系统</h2><h4 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">graph BT</span><br><span class="line">a(信息的特征)</span><br><span class="line">b[客观性]--&gt;a</span><br><span class="line">c[普遍性]--&gt;a</span><br><span class="line">d[无限性]--&gt;a</span><br><span class="line">e[动态性]--&gt;a</span><br><span class="line">f[相对性]--&gt;a</span><br><span class="line">g[依附性]--&gt;a</span><br><span class="line">h[变换性]--&gt;a</span><br><span class="line">i[传递性]--&gt;a</span><br><span class="line">j[层次性]--&gt;a</span><br><span class="line">k[系统性]--&gt;a</span><br><span class="line">l[转化性]--&gt;a</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/01/17/system_analyst-2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">系统分析师</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/17/system_analyst-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1045,10 +1051,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
@@ -1057,11 +1059,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">自学</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">系统分析师</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
