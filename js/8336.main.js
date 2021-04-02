@@ -1,0 +1,1 @@
+(self.webpackChunktoy=self.webpackChunktoy||[]).push([[8336],{8336:(e,f,s)=>{"use strict";s.r(f),s.d(f,{default:()=>t});const t=s.p+"img/iconfont.svg?c0826f5e25a4441bb814450f0fd2a493"}}]);

@@ -1,0 +1,1 @@
+(self.webpackChunktoy=self.webpackChunktoy||[]).push([[1056],{1056:(e,t,o)=>{"use strict";o.r(t),o.d(t,{default:()=>a});const a=o.p+"font/iconfont.eot?d406491049a01c6afa68731de77e199b"}}]);

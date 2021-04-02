@@ -1,0 +1,1 @@
+(self.webpackChunktoy=self.webpackChunktoy||[]).push([[5483],{5483:(e,t,f)=>{"use strict";f.r(t),f.d(t,{default:()=>s});const s=f.p+"img/nature7.jpg?8d1f2332e96643a6c73b338575f90f7e"}}]);

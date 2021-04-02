@@ -1,0 +1,1 @@
+(self.webpackChunktoy=self.webpackChunktoy||[]).push([[6857],{6857:(e,c,s)=>{"use strict";s.r(c),s.d(c,{default:()=>t});const t=s.p+"img/wolves_night.jpg?8dc847cbeb8882fd99e09c0e8a793d4e"}}]);
